@@ -1,9 +1,14 @@
 import express from 'express';
 import constants from '../constants';
 import NewsAPI from 'newsapi';
+import { NewsApiArticle, NewsApiResponse } from '../api/newsApi';
+import { mapNewsApiResponseToNews } from '../mappers/newsApiToNews';
+import News from '../News';
+import config from '../config';
 
-const newsapi = new NewsAPI('d4d95eab588746b5bf5dcdb55f7e4259');
+const newsAPI = new NewsAPI(config.api.newsApi.key);
 const router = express.Router();
+
 router.get('/', (req, res) => {
   res.send('News Route');
 });
@@ -13,13 +18,14 @@ const getRandomTopic = () => {
   return topics[Math.floor(Math.random() * topics.length)];
 };
 
-const requestRandomFreshNews = async () => {
+const requestRandomFreshNews = async (): Promise<News> => {
   const topic = getRandomTopic();
-  const response = await newsapi.v2.topHeadlines({
+  const response: NewsApiResponse = await newsAPI.v2.topHeadlines({
     category: topic,
     country: 'fr'
   });
-  return response;
+  const news: News[] = response.articles.map(mapNewsApiResponseToNews);
+  return news[Math.floor(Math.random() * news.length)];
 };
 
 router.get('/randomFreshNews', async (req, res) => {
