@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "start": "npm run build && node build/ootl-back.js",
-    "build": "rimraf ./build && tsc",
+    "build": "tsc",
+    "build-prod": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only --rs src/ootl-back.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
