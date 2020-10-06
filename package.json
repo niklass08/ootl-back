@@ -5,7 +5,7 @@
   "main": "src/ootl-back.ts",
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "start": "npm run build && node build/ootl-back.js",
+    "start": "node -r ts-node/register ./src/ootl-back.ts",
     "build": "tsc",
     "build-prod": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only --rs src/ootl-back.ts",
