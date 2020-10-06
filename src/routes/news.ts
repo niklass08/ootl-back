@@ -1,3 +1,4 @@
+/// <reference types="../../types/newsApi" />
 import express from 'express';
 import constants from '../constants';
 import NewsAPI from 'newsapi';
