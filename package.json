@@ -31,7 +31,7 @@
     "eslint": "^7.9.0",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "ts-node-dev": "^1.0.0-pre.62",
+    "ts-node-dev": "^1.0.0-pre.62"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -40,6 +40,5 @@
     "node-cache": "^5.1.2",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
-
   }
 }
