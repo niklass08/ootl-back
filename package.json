@@ -1,7 +1,7 @@
 {
   "name": "ootl-back",
   "engines": {
-    "node": "10.14.0"
+    "node": "12.18.0"
   },
   "version": "1.0.0",
   "description": "Back end for the out of the loop application",
