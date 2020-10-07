@@ -1,5 +1,8 @@
 {
   "name": "ootl-back",
+  "engines": {
+    "node": "10.14.0"
+  },
   "version": "1.0.0",
   "description": "Back end for the out of the loop application",
   "main": "src/ootl-back.ts",
