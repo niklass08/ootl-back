@@ -9,6 +9,7 @@ export const mapNewsApiResponseToNews = (
     title: newsApiResponse.title.replace(sourceRegex, '.'),
     abstract: newsApiResponse.description,
     content: newsApiResponse.content,
-    sourceName: newsApiResponse.source.name
+    sourceName: newsApiResponse.source.name,
+    url: newsApiResponse.url
   });
 };
